@@ -20,7 +20,7 @@ def getHtml(url,headers):
     c.setopt(pycurl.CONNECTTIMEOUT, 60)        #设置链接超时
     c.setopt(pycurl.TIMEOUT,120)            #下载超时
     c.setopt(pycurl.ENCODING, 'gzip,deflate')    #处理gzip内容，有些傻逼网站，就算你给的请求没有gzip，它还是会返回一个gzip压缩后的网页
-    c.setopt(c.PROXY,'23.236.79.228:25')    # 代理
+    c.setopt(c.PROXY,'ip:post')    # 自建http代理服务器ip端口
     c.fp = StringIO.StringIO()    
     c.setopt(pycurl.URL, url)    #设置要访问的URL
     c.setopt(pycurl.HTTPHEADER,headers)        #传入请求头
